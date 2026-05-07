@@ -1,0 +1,41 @@
+{
+  "name": "lenia-life-lab",
+  "version": "0.1.0",
+  "description": "Breed, mutate, hear, and share living Lenia creatures in a static WebGPU playground.",
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "build": "node scripts/prepare-pages.mjs && npm run build:wasm && tsc -b && vite build && node scripts/copy-404.mjs",
+    "build:wasm": "asc assembly/lenia.ts --target release --outFile src/wasm/lenia.wasm --optimize",
+    "dev": "npm run build:wasm && vite --host 127.0.0.1",
+    "fmt": "prettier --write .",
+    "lint": "eslint . && prettier --check . && tsc --noEmit",
+    "pages:serve": "vite preview --host 127.0.0.1 --port 4187",
+    "smoke": "playwright test --config playwright.config.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@tanstack/query-core": "^5.90.7",
+    "three": "^0.181.2",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@assemblyscript/loader": "^0.28.9",
+    "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1",
+    "@types/three": "^0.181.0",
+    "@webgpu/types": "^0.1.65",
+    "assemblyscript": "^0.28.9",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.1",
+    "jsdom": "^27.2.0",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^3.4.18",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.3",
+    "vite": "^8.0.11",
+    "vitest": "^4.0.8"
+  }
+}

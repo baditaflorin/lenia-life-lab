@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+message_file="${1:?commit message file required}"
+first_line="$(head -n 1 "$message_file")"
+
+if [[ ! "$first_line" =~ ^(feat|fix|docs|chore|refactor|test|ops|data|build|style|perf)(\([a-z0-9._-]+\))?!?:\ .+ ]]; then
+  printf "Commit message must use Conventional Commits, got: %s\n" "$first_line" >&2
+  exit 1
+fi

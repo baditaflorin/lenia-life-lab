@@ -1,0 +1,18 @@
+{
+  "name": "Lenia Life Lab",
+  "short_name": "Lenia Lab",
+  "description": "Breed, mutate, hear, and share living Lenia creatures.",
+  "start_url": "/lenia-life-lab/",
+  "scope": "/lenia-life-lab/",
+  "display": "standalone",
+  "background_color": "#07120f",
+  "theme_color": "#07120f",
+  "icons": [
+    {
+      "src": "/lenia-life-lab/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
