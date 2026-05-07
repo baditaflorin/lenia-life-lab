@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lenia Life Lab">
+  <rect width="64" height="64" rx="12" fill="#07120f"/>
+  <path d="M32 8c10.8 0 22 7.9 22 19.8C54 43.6 42.5 56 29 56 18.6 56 10 48.9 10 38.7 10 23.4 21.7 8 32 8Z" fill="#76f7c8"/>
+  <path d="M32.8 17.8c6.5 0 12.7 4.5 12.7 11.1 0 8.7-6.9 16.8-14.9 16.8-6.3 0-11.2-4-11.2-10.1 0-9.8 7.2-17.8 13.4-17.8Z" fill="#f06a5f"/>
+  <circle cx="34" cy="31" r="5.4" fill="#f7d774"/>
+</svg>
