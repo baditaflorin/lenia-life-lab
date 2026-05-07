@@ -1,11 +1,15 @@
 import { execSync } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { defineConfig } from "vitest/config";
 
 const packageJson = JSON.parse(readFileSync("package.json", "utf8")) as { version: string };
 
 function readCommit(): string {
+  if (existsSync(".pages-source-commit")) {
+    return readFileSync(".pages-source-commit", "utf8").trim();
+  }
+
   try {
     return execSync("git rev-parse --short HEAD", { encoding: "utf8" }).trim();
   } catch {
